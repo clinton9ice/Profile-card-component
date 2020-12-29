@@ -1,0 +1,119 @@
+*,
+* ::before,
+* ::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   font-size: 100%;
+}
+@font-face{
+    font-family: kumbh-regular;
+    font-weight: 500;
+    src: url("./font/KumbhSans-Regular.ttf");
+}
+@font-face{
+    font-family: kumbh-bold;
+    font-weight: 500;
+    src: url("./font/KumbhSans-Bold.ttf");
+}
+.tr{
+        display: -moz-box;
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+.header{
+    font-family: "kumbh-bold", sans-serif;
+}
+.light{
+     color: hsl(0, 0%, 59%);
+}
+body{
+position: relative;
+flex-direction: column;
+min-height: 100vh;
+background-color: hsl(185, 75%, 39%);
+font-family: "kumbh-regular", sans-serif;
+overflow: hidden;
+}
+body::before{
+left: 0;
+top: 0;
+  background: url("./images/bg-pattern-top.svg");
+  transform: rotate(180deg);
+}
+body::after,
+body::before {
+    position: absolute;
+    content: "";
+    height: 400px;width: 50%;
+ 
+}
+body::after{
+      bottom: 0;
+      right:0;
+      transform: rotate(15deg) translate(40px, 30%);
+     background: url("./images/bg-pattern-bottom.svg");
+}
+
+body > header{
+    max-width: 350px;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 15px;
+    background-color: hsl(0, 0%, 99%);
+    box-shadow: 0 20px 50px hsla(227, 10%, 46%, 0.397);
+    z-index: 900;
+    line-height: 25px;
+    font-size: 18px;
+    text-align: center;
+
+}
+
+body>header img{border-radius: 10px 10px 0 0}
+body>header .user__details{
+    flex-direction: column;
+    width: 100%;
+}
+body>header .top__header{
+    border-top-right-radius: inherit;
+    border-top-left-radius: inherit;
+}
+body>header img{
+   border-radius: inherit;
+   width: 100%;
+}
+body>header .user__details .user_bio{
+    margin-top: 1rem;
+}
+body>header .user__details .user_bio .city{font-size: 0.876em;}
+body>header .user__details .img{
+       position: relative;
+          border-radius: 50%;
+      margin-top: -65px;
+        width: 105px;
+        height: 105px;
+        background-color: #f5f5f5;
+}
+body>header .user__details .footer{
+    margin-top: 1.5rem;
+    width: 100%;
+    border-top: 1px solid hsla(0, 0%, 59%, 0.159);
+    justify-content: space-evenly;
+    padding: 1rem;
+    line-height: 25px;
+    text-transform: capitalize;
+        letter-spacing: 1px;
+}
+body>header .user__details .footer span span{
+    display: block;
+}
+body>header .user__details .footer span span:nth-child(2){
+    font-size: 12px;
+}
+@media only screen and (max-width: 375px){
+    body{padding: 0 10px;}
+    .header{font-size: 1em;}
+    .light{font-size: 0.86em;}
+}
